@@ -5,8 +5,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/86/three.min.js"></script>
+    <script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script> -->
     <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
 
   </head>
 
@@ -19,22 +20,96 @@
         <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
       </a-assets>
 
-      <a-entity position="0 2.25 -15" particle-system="color: #EF0000,#44CC00"></a-entity>
+      <!-- <a-entity position="0 2.25 -15" particle-system="preset: snow"></a-entity> -->
+<!--
+      <a-cylinder color="#F55" radius="0.1"
+            animation="property: color; dir: alternate; dur: 1000;
+                       easing: easeInSine; loop: true; to: #5F5"
+            animation__scale="property: scale; dir: alternate; dur: 200;
+                       easing: easeInSine; loop: true; to: 1.2 1 1.2"
+            animation__yoyo="property: position; dir: alternate; dur: 1000;
+                             easing: easeInSine; loop: true; to: 0 2 0">
+      </a-cylinder> -->
+<!--
+      <a-cylinder color="#F55" radius="0.1"
+            animation="property: color; dir: alternate; dur: 1000;
+                       easing: easeInSine; loop: true; to: #5F5"
+            animation__scale="property: scale; dir: alternate; dur: 200;
+                       easing: easeInSine; loop: true; to: 15.2 1 1.2"
+            animation__yoyo="property: position; dir: alternate; dur: 1000;
+                             easing: easeInSine; loop: true; to: 15 2 0">
+      </a-cylinder>
 
-      <a-entity line="start: 0, 0, 0; end: 5, 0, 0; color: red; opacity: 50"
-          line__2="start: 0, 0, 0; end: 0, 5, 0; color: green; opacity: 50"
-          line__3="start: 2.5, 0, 0; end: 2.5, 5, 0; color: blue; opacity: 50"></a-entity>
+      <a-cylinder color="#F55" radius="0.1"
+            animation="property: color; dir: alternate; dur: 1000;
+                       easing: easeInSine; loop: true; to: #5F5"
+            animation__scale="property: scale; dir: alternate; dur: 200;
+                       easing: easeInSine; loop: true; to: -15.2 1 1.2"
+            animation__yoyo="property: position; dir: alternate; dur: 1000;
+                             easing: easeInSine; loop: true; to: -15 2 0">
+      </a-cylinder> -->
+<!--
+      <a-mixin id="box" material="color: #F55" animation="property: rotation; to: 0 45 0"></a-mixin>
+      <a-entity id="container" position="0 0 -4">
+    <a-box mixin="box" position="-2 2 -2" animation="loop: 1"></a-box>
+    <a-box mixin="box" position="0 2 -2" animation="loop: 4"></a-box>
+    <a-box mixin="box" position="2 2 -2" animation="loop: 8"></a-box>
+
+    <a-box mixin="box" position="-2 0 -2" animation="dir: alternate; loop: 1"></a-box>
+    <a-box mixin="box" position="0 0 -2" animation="dir: alternate; loop: 4"></a-box>
+    <a-box mixin="box" position="2 0 -2" animation="dir: alternate; loop: 8"></a-box>
+  </a-entity> -->
+
+      <a-entity line="start: 0, 0, 0; end: 5, 0, 0; color: black; opacity: 1000"
+          line__2="start: 0, 0, 0; end: 0, 5, 0; color: black; opacity: 1000"
+          line__3="start: 2, 0, 0; end: 2, 5, 0; color: blue; opacity: 50"
+          line__4="start: 0, 4, 0; end: 4, 0, 0; color: red; opacity: 50"
+          line__5="start: 0, 2, 0; end: 2, 2, 0; color: white; opacity: 1"></a-entity>
       <a-entity position="1 7 0" text-geometry="value: MONEY MODEL" material="color: black"></a-entity>
+      <a-entity position="1.8 5 0" text-geometry="value: S" material="color: black"></a-entity>
+      <a-entity position="3.7 .5 0" text-geometry="value: D" material="color: black"></a-entity>
+      <a-entity
+      animation="property: color; dir: alternate; dur: 1000;
+                 easing: easeInSine; loop: true; to: #5F5"
+      animation__scale="property: scale; dir: alternate; dur: 200;
+                 easing: easeInSine; loop: true; to: 1.2 1 1.2"
+      animation__yoyo="property: position; dir: alternate; dur: 1000;
+                       easing: easeInSine; loop: true; to: 0 2 0"
+                       position="-1.7 1.8 0" text-geometry="value: Price" material="color: black"></a-entity>
 
-      <a-entity line="start: 10, 0, 0; end: 15, 0, 0; color: red; opacity: 50"
-          line__2="start: 10, 0, 0; end: 10, 5, 0; color: green; opacity: 50"
-          line__3="start: 12.5, 0, 0; end: 12.5, 5, 0; color: blue; opacity: 50"></a-entity>
-      <a-entity position="10 6 0" text-geometry="value: With Demand Increase" material="color: black"></a-entity>
+      <a-entity line="start: 15, 0, 0; end: 20, 0, 0; color: black; opacity: 50"
+          line__2="start: 15, 0, 0; end: 15, 5, 0; color: black; opacity: 50"
+          line__3="start: 17, 0, 0; end: 17, 5, 0; color: blue; opacity: 50"
+          line__4="start: 15, 5, 0; end: 20, 0, 0; color: red; opacity: 50"
+          line__5="start: 15, 3, 0; end: 17, 3, 0; color: white; opacity: 50"></a-entity>
+      <a-entity position="15 6 0" text-geometry="value: With Demand Increase" material="color: black"></a-entity>
+      <a-entity position="16.8 5 0" text-geometry="value: S" material="color: black"></a-entity>
+      <a-entity position="18.7 0.2 0" text-geometry="value: D" material="color: black"></a-entity>
+      <a-entity
+      animation="property: color; dir: alternate; dur: 1000;
+                 easing: easeInSine; loop: true; to: #5F5"
+      animation__scale="property: scale; dir: alternate; dur: 200;
+                 easing: easeInSine; loop: true; to: 1.2 1 1.2"
+      animation__yoyo="property: position; dir: alternate; dur: 1000;
+                       easing: easeInSine; loop: true; to: 0 2 0"
+                       position="13.3 2.8 0" text-geometry="value: Price" material="color: black"></a-entity>
 
-      <a-entity line="start: -10, 0, 0; end: -5, 0, 0; color: red; opacity: 50"
-          line__2="start: -10, 0, 0; end: -10, 5, 0; color: green; opacity: 50"
-          line__3="start: -7.5, 0, 0; end: -7.5, 5, 0; color: blue; opacity: 50"></a-entity>
-      <a-entity position="-10 6 0" text-geometry="value: With Demand Decrease" material="color: black"></a-entity>
+      <a-entity line="start: -15, 0, 0; end: -10, 0, 0; color: black; opacity: 50"
+          line__2="start: -15, 0, 0; end: -15, 5, 0; color: black; opacity: 50"
+          line__3="start: -13, 0, 0; end: -13, 5, 0; color: blue; opacity: 50"
+          line__4="start: 15, 5, 0; end: 20, 0, 0; color: red; opacity: 50"
+          ></a-entity>
+      <a-entity position="-15 6 0" text-geometry="value: With Demand Decrease" material="color: black"></a-entity>
+      <a-entity position="-13.2 5 0" text-geometry="value: S" material="color: black"></a-entity>
+      <a-entity position="-11.3 0.2 0" text-geometry="value: D" material="color: black"></a-entity>
+      <a-entity
+      animation="property: color; dir: alternate; dur: 1000;
+                 easing: easeInSine; loop: true; to: #5F5"
+      animation__scale="property: scale; dir: alternate; dur: 200;
+                 easing: easeInSine; loop: true; to: 1.2 1 1.2"
+      animation__yoyo="property: position; dir: alternate; dur: 1000;
+                       easing: easeInSine; loop: true; to: 0 2 0"
+                       position="-16.7 2.8 0" text-geometry="value: Price" material="color: black"></a-entity>
 
       <a-sky src="#sky" rotation="0 -90 0"></a-sky>
     </a-scene>
